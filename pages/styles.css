@@ -117,22 +117,23 @@ nav ul li a:hover {
 
 .main-carousel-dots {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
 .main-dot {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 .main-dot.active {
-    background: #2c1810;
-    border-color: #fff;
+    background: #fff;
+    width: 24px;
+    border-radius: 4px;
 }
 
 /* Features Section */
@@ -410,26 +411,28 @@ footer {
 
 .main-carousel-controls {
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 12px;
     z-index: 10;
 }
 
 .pause-btn {
-    background: rgba(255, 255, 255, 0.95);
-    color: #2c1810;
-    border: 2px solid #2c1810;
-    width: 50px;
-    height: 50px;
-    font-size: 18px;
+    background: rgba(44, 24, 16, 0.8);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
 }
 
 /* Responsive */
@@ -484,8 +487,8 @@ footer {
     }
     
     .main-carousel-controls {
-        bottom: 15px;
-        gap: 15px;
+        bottom: 20px;
+        gap: 10px;
     }
     
     .main-carousel-dots {
@@ -493,8 +496,18 @@ footer {
     }
     
     .main-dot {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
+    }
+    
+    .main-dot.active {
+        width: 18px;
+    }
+    
+    .pause-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
     }
     
     .feature-image {
