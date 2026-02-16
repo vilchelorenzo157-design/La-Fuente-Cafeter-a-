@@ -91,7 +91,6 @@ nav ul li a:hover {
     width: 100%;
     height: 500px;
     overflow: hidden;
-    will-change: transform;
 }
 
 .main-slide {
@@ -99,7 +98,7 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 0.8s ease-in-out;
+    transition: opacity 0.6s ease-in-out;
     pointer-events: none;
 }
 
@@ -112,7 +111,6 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    will-change: opacity;
 }
 
 .main-carousel-dots {
@@ -161,11 +159,11 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
+    transition: transform 0.4s ease;
 }
 
 .feature-card:hover .feature-image img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .feature-content {
@@ -369,9 +367,15 @@ footer {
 
 .slider-track {
     display: flex;
-    animation: scroll 40s linear infinite;
+    animation: scroll 50s linear infinite;
     width: fit-content;
     will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slider-track {
+        animation: none;
+    }
 }
 
 .slide-item {
@@ -398,15 +402,11 @@ footer {
 
 @keyframes scroll {
     0% {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translate3d(-50%, 0, 0);
     }
-}
-
-.slider-track:hover {
-    animation-play-state: paused;
 }
 
 .main-carousel-controls {

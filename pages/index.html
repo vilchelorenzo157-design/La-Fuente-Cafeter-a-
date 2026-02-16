@@ -190,10 +190,9 @@
     </footer>
 
     <script>
-        // Main Carousel - Optimizado
+        // Main Carousel - Optimizado para mejor rendimiento
         let mainIndex = 0;
         let mainCarouselInterval;
-        let isMainPaused = false;
         const mainSlides = document.querySelectorAll('.main-slide');
         const mainDots = document.querySelectorAll('.main-dot');
 
@@ -201,20 +200,18 @@
             if (index >= mainSlides.length) mainIndex = 0;
             if (index < 0) mainIndex = mainSlides.length - 1;
             
-            mainSlides.forEach((slide, i) => {
-                if (i === mainIndex) {
-                    slide.classList.add('active');
-                    mainDots[i].classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                    mainDots[i].classList.remove('active');
-                }
+            // Usar requestAnimationFrame para mejor rendimiento
+            requestAnimationFrame(() => {
+                mainSlides.forEach((slide, i) => {
+                    if (i === mainIndex) {
+                        slide.classList.add('active');
+                        mainDots[i].classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                        mainDots[i].classList.remove('active');
+                    }
+                });
             });
-        }
-
-        function moveMainSlide(direction) {
-            mainIndex += direction;
-            showMainSlide(mainIndex);
         }
 
         function currentMainSlide(index) {
@@ -222,24 +219,11 @@
             showMainSlide(mainIndex);
         }
 
-        function toggleMainCarousel() {
-            const pauseBtn = document.querySelector('.pause-btn');
-            if (isMainPaused) {
-                startMainCarousel();
-                pauseBtn.textContent = '⏸';
-                isMainPaused = false;
-            } else {
-                clearInterval(mainCarouselInterval);
-                pauseBtn.textContent = '▶';
-                isMainPaused = true;
-            }
-        }
-
         function startMainCarousel() {
             mainCarouselInterval = setInterval(() => {
                 mainIndex++;
                 showMainSlide(mainIndex);
-            }, 5000);
+            }, 6000);
         }
 
         // Iniciar solo cuando la página esté lista
@@ -249,13 +233,19 @@
             startMainCarousel();
         }
 
-        // Pausar animaciones cuando la pestaña no está visible
+        // Pausar animaciones cuando la pestaña no está visible para ahorrar recursos
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
                 clearInterval(mainCarouselInterval);
-            } else if (!isMainPaused) {
+            } else {
+                clearInterval(mainCarouselInterval);
                 startMainCarousel();
             }
+        });
+
+        // Limpiar interval al salir de la página
+        window.addEventListener('beforeunload', () => {
+            clearInterval(mainCarouselInterval);
         });
     </script>
 </body>
