@@ -2,7 +2,11 @@
 
 Sitio web moderno y responsive para cafetería de especialidad con panadería artesanal.
 
-## 🌟 Características
+## � Ver la Página
+
+**[👉 Ver sitio en vivo](https://vilchelorenzo157-design.github.io/La-Fuente-Cafeter-a-/pages/)**
+
+## �🌟 Características
 
 - **Diseño Responsive**: Adaptado para móviles, tablets y escritorio
 - **Carrusel Interactivo**: Galería de imágenes con controles de navegación y pausa
