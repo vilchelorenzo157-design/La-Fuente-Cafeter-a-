@@ -1,0 +1,16 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+<!-- Fondo opcional -->
+<rect width="800" height="400" fill="white"/>
+<!-- Ícono fuente estilizada -->
+<g transform="translate(200,120)">
+<path d="M0 120 Q80 0 160 120" stroke="#6B3E26" stroke-width="6" fill="none"/>
+<ellipse cx="80" cy="130" rx="100" ry="15" fill="#6B3E26"/>
+</g>
+<!-- Vapor estilo café -->
+<path d="M380 120 Q400 80 420 120" stroke="#C7A17A" stroke-width="4" fill="none"/>
+<path d="M410 120 Q430 80 450 120" stroke="#C7A17A" stroke-width="4" fill="none"/>
+<!-- Texto principal -->
+<text x="400" y="260" text-anchor="middle" font-size="64" font-family="Georgia" fill="#3B2A1E">La Fuente</text>
+<!-- Subtítulo -->
+<text x="400" y="300" text-anchor="middle" font-size="20" font-family="Arial" fill="#6B3E26" letter-spacing="4">CAFETERÍA</text>
+</svg>

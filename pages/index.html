@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La Fuente - Cafetería de especialidad con panadería artesanal. Descubre el arte del café en un ambiente acogedor.">
+    <meta name="keywords" content="cafetería, café de especialidad, panadería artesanal, La Fuente">
+    <meta name="author" content="La Fuente Cafetería">
+    <title>La Fuente - Cafetería de Especialidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../assets/logo.svg" alt="La Fuente Cafetería">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>UNA VENTANA AL CAFÉ DE ESPECIALIDAD</h1>
+            <p>Descubre el arte de un auténtico café de especialidad con panificación artesanal. Esta fusión de sabores y estilos crea un ambiente acogedor y refinado que ayuda a disfrutar de una experiencia única.</p>
+        </div>
+    </section>
+
+    <!-- Main Carousel -->
+    <section class="main-carousel">
+        <div class="main-carousel-container">
+            <div class="main-slide active">
+                <img src="../assets/pexels-beyzaa-yurtkuran-279977530-30596807.jpg" alt="Café especialidad">
+            </div>
+            <div class="main-slide">
+                <img src="../assets/pexels-fmaderebner-745988.jpg" alt="Ambiente">
+            </div>
+            <div class="main-slide">
+                <img src="../assets/pexels-manish-jain-1176829519-30926131.jpg" alt="Productos">
+            </div>
+            <div class="main-slide">
+                <img src="../assets/pexels-davegarcia-32727237.jpg" alt="Especialidad">
+            </div>
+            
+            <button class="main-carousel-btn prev" onclick="moveMainSlide(-1)">‹</button>
+            <button class="main-carousel-btn next" onclick="moveMainSlide(1)">›</button>
+            
+            <div class="main-carousel-controls">
+                <div class="main-carousel-dots">
+                    <span class="main-dot active" onclick="currentMainSlide(0)"></span>
+                    <span class="main-dot" onclick="currentMainSlide(1)"></span>
+                    <span class="main-dot" onclick="currentMainSlide(2)"></span>
+                    <span class="main-dot" onclick="currentMainSlide(3)"></span>
+                </div>
+                <button class="pause-btn" onclick="toggleMainCarousel()">⏸</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-image">
+                <img src="../assets/0cdd185ef4b89fb7a342716b61d9bed4.jpg" alt="Café">
+            </div>
+            <div class="feature-content">
+                <h3>CAFÉ DE ESPECIALIDAD</h3>
+                <p>Granos seleccionados de las mejores fincas del mundo</p>
+            </div>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-image">
+                <img src="../assets/c63c1c3a21d1c31c13356f3532d4e138.jpg" alt="Panadería">
+            </div>
+            <div class="feature-content">
+                <h3>PANADERÍA ARTESANAL</h3>
+                <p>Elaboración diaria con ingredientes naturales</p>
+            </div>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-image">
+                <img src="../assets/d4dc43cc42e279c1a7a9a99556925a73.jpg" alt="Ambiente">
+            </div>
+            <div class="feature-content">
+                <h3>AMBIENTE ACOGEDOR</h3>
+                <p>El lugar perfecto para disfrutar y relajarte</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-slider-section">
+            <div class="slider-track">
+                <div class="slide-item">
+                    <img src="../assets/0cdd185ef4b89fb7a342716b61d9bed4.jpg" alt="Café">
+                    <p>Creamos Cultura</p>
+                </div>
+                <div class="slide-item">
+                    <img src="../assets/c63c1c3a21d1c31c13356f3532d4e138.jpg" alt="Consciencia">
+                    <p>Creamos Consciencia</p>
+                </div>
+                <div class="slide-item">
+                    <img src="../assets/d4dc43cc42e279c1a7a9a99556925a73.jpg" alt="Café">
+                    <p>Curamos Café</p>
+                </div>
+                <div class="slide-item">
+                    <img src="../assets/Manon.jpg" alt="Experiencia">
+                    <p>Creamos Experiencias</p>
+                </div>
+                <!-- Duplicado para efecto infinito -->
+                <div class="slide-item">
+                    <img src="../assets/0cdd185ef4b89fb7a342716b61d9bed4.jpg" alt="Café">
+                    <p>Creamos Cultura</p>
+                </div>
+                <div class="slide-item">
+                    <img src="../assets/c63c1c3a21d1c31c13356f3532d4e138.jpg" alt="Consciencia">
+                    <p>Creamos Consciencia</p>
+                </div>
+                <div class="slide-item">
+                    <img src="../assets/d4dc43cc42e279c1a7a9a99556925a73.jpg" alt="Café">
+                    <p>Curamos Café</p>
+                </div>
+                <div class="slide-item">
+                    <img src="../assets/Manon.jpg" alt="Experiencia">
+                    <p>Creamos Experiencias</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre Nosotros</h3>
+                    <p>Somos una cafetería especializada en ofrecer los mejores cafés de especialidad, con granos seleccionados y tostados artesanalmente.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#menu">Nuestro Menú</a></li>
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#reservas">Reservas</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Horarios</h3>
+                    <ul>
+                        <li>Lunes - Viernes: 7:00 - 21:00</li>
+                        <li>Sábados: 8:00 - 22:00</li>
+                        <li>Domingos: 9:00 - 20:00</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>📞 +34 123 456 789</li>
+                        <li>✉️ info@lafuente.com</li>
+                        <li>📍 Calle Principal, 123</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 La Fuente Cafetería. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Main Carousel
+        let mainIndex = 0;
+        let mainCarouselInterval;
+        let isMainPaused = false;
+        const mainSlides = document.querySelectorAll('.main-slide');
+        const mainDots = document.querySelectorAll('.main-dot');
+
+        function showMainSlide(index) {
+            mainSlides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                mainDots[i].classList.remove('active');
+            });
+            
+            if (index >= mainSlides.length) mainIndex = 0;
+            if (index < 0) mainIndex = mainSlides.length - 1;
+            
+            mainSlides[mainIndex].classList.add('active');
+            mainDots[mainIndex].classList.add('active');
+        }
+
+        function moveMainSlide(direction) {
+            mainIndex += direction;
+            showMainSlide(mainIndex);
+        }
+
+        function currentMainSlide(index) {
+            mainIndex = index;
+            showMainSlide(mainIndex);
+        }
+
+        function toggleMainCarousel() {
+            const pauseBtn = document.querySelector('.pause-btn');
+            if (isMainPaused) {
+                startMainCarousel();
+                pauseBtn.textContent = '⏸';
+                isMainPaused = false;
+            } else {
+                clearInterval(mainCarouselInterval);
+                pauseBtn.textContent = '▶';
+                isMainPaused = true;
+            }
+        }
+
+        function startMainCarousel() {
+            mainCarouselInterval = setInterval(() => {
+                mainIndex++;
+                showMainSlide(mainIndex);
+            }, 5000);
+        }
+
+        startMainCarousel();
+
+        // No footer carousel needed anymore
+    </script>
+</body>
+</html>
