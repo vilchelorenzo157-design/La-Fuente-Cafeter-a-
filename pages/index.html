@@ -39,16 +39,16 @@
     <section class="main-carousel">
         <div class="main-carousel-container">
             <div class="main-slide active">
-                <img src="../assets/pexels-beyzaa-yurtkuran-279977530-30596807.jpg" alt="Café especialidad">
+                <img src="../assets/pexels-beyzaa-yurtkuran-279977530-30596807.jpg" alt="Café especialidad" loading="eager">
             </div>
             <div class="main-slide">
-                <img src="../assets/pexels-davegarcia-32727237.jpg" alt="Ambiente">
+                <img src="../assets/pexels-davegarcia-32727237.jpg" alt="Ambiente" loading="lazy">
             </div>
             <div class="main-slide">
-                <img src="../assets/pexels-fmaderebner-745988.jpg" alt="Productos">
+                <img src="../assets/pexels-fmaderebner-745988.jpg" alt="Productos" loading="lazy">
             </div>
             <div class="main-slide">
-                <img src="../assets/pexels-manish-jain-1176829519-30926131.jpg" alt="Especialidad">
+                <img src="../assets/pexels-manish-jain-1176829519-30926131.jpg" alt="Especialidad" loading="lazy">
             </div>
             
             <div class="main-carousel-controls">
@@ -67,7 +67,7 @@
     <section class="features">
         <div class="feature-card">
             <div class="feature-image">
-                <img src="../assets/0cdd185ef4b89fb7a342716b61d9bed4.jpg" alt="Café">
+                <img src="../assets/0cdd185ef4b89fb7a342716b61d9bed4.jpg" alt="Café" loading="lazy">
             </div>
             <div class="feature-content">
                 <h3>CAFÉ DE ESPECIALIDAD</h3>
@@ -77,7 +77,7 @@
         
         <div class="feature-card">
             <div class="feature-image">
-                <img src="../assets/c63c1c3a21d1c31c13356f3532d4e138.jpg" alt="Panadería">
+                <img src="../assets/c63c1c3a21d1c31c13356f3532d4e138.jpg" alt="Panadería" loading="lazy">
             </div>
             <div class="feature-content">
                 <h3>PANADERÍA ARTESANAL</h3>
@@ -87,7 +87,7 @@
         
         <div class="feature-card">
             <div class="feature-image">
-                <img src="../assets/pexels-cristian-rojas-7487523.jpg" alt="Ambiente">
+                <img src="../assets/pexels-cristian-rojas-7487523.jpg" alt="Ambiente" loading="lazy">
             </div>
             <div class="feature-content">
                 <h3>AMBIENTE ACOGEDOR</h3>
@@ -100,44 +100,44 @@
         <div class="footer-slider-section">
             <div class="slider-track">
                 <div class="slide-item">
-                    <img src="../assets/111 (1).jpg" alt="Café">
+                    <img src="../assets/111 (1).jpg" alt="Café" loading="lazy">
                     <p>Café de Origen</p>
                 </div>
                 <div class="slide-item">
-                    <img src="../assets/111 (2).jpg" alt="Pastelería">
+                    <img src="../assets/111 (2).jpg" alt="Pastelería" loading="lazy">
                     <p>Pastelería Artesanal</p>
                 </div>
                 <div class="slide-item">
-                    <img src="../assets/111 (3).jpg" alt="Panadería">
+                    <img src="../assets/111 (3).jpg" alt="Panadería" loading="lazy">
                     <p>Pan Recién Horneado</p>
                 </div>
                 <div class="slide-item">
-                    <img src="../assets/111 (4).jpg" alt="Especialidades">
+                    <img src="../assets/111 (4).jpg" alt="Especialidades" loading="lazy">
                     <p>Especialidades Dulces</p>
                 </div>
                 <div class="slide-item">
-                    <img src="../assets/111 (5).jpg" alt="Ambiente">
+                    <img src="../assets/111 (5).jpg" alt="Ambiente" loading="lazy">
                     <p>Momentos Únicos</p>
                 </div>
                 <!-- Duplicado para efecto infinito -->
                 <div class="slide-item">
-                    <img src="../assets/111 (1).jpg" alt="Café">
+                    <img src="../assets/111 (1).jpg" alt="Café" loading="lazy">
                     <p>Café de Origen</p>
                 </div>
                 <div class="slide-item">
-                    <img src="../assets/111 (2).jpg" alt="Pastelería">
+                    <img src="../assets/111 (2).jpg" alt="Pastelería" loading="lazy">
                     <p>Pastelería Artesanal</p>
                 </div>
                 <div class="slide-item">
-                    <img src="../assets/111 (3).jpg" alt="Panadería">
+                    <img src="../assets/111 (3).jpg" alt="Panadería" loading="lazy">
                     <p>Pan Recién Horneado</p>
                 </div>
                 <div class="slide-item">
-                    <img src="../assets/111 (4).jpg" alt="Especialidades">
+                    <img src="../assets/111 (4).jpg" alt="Especialidades" loading="lazy">
                     <p>Especialidades Dulces</p>
                 </div>
                 <div class="slide-item">
-                    <img src="../assets/111 (5).jpg" alt="Ambiente">
+                    <img src="../assets/111 (5).jpg" alt="Ambiente" loading="lazy">
                     <p>Momentos Únicos</p>
                 </div>
             </div>
@@ -191,7 +191,7 @@
     </footer>
 
     <script>
-        // Main Carousel
+        // Main Carousel - Optimizado
         let mainIndex = 0;
         let mainCarouselInterval;
         let isMainPaused = false;
@@ -199,16 +199,18 @@
         const mainDots = document.querySelectorAll('.main-dot');
 
         function showMainSlide(index) {
-            mainSlides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                mainDots[i].classList.remove('active');
-            });
-            
             if (index >= mainSlides.length) mainIndex = 0;
             if (index < 0) mainIndex = mainSlides.length - 1;
             
-            mainSlides[mainIndex].classList.add('active');
-            mainDots[mainIndex].classList.add('active');
+            mainSlides.forEach((slide, i) => {
+                if (i === mainIndex) {
+                    slide.classList.add('active');
+                    mainDots[i].classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                    mainDots[i].classList.remove('active');
+                }
+            });
         }
 
         function moveMainSlide(direction) {
@@ -241,9 +243,21 @@
             }, 5000);
         }
 
-        startMainCarousel();
+        // Iniciar solo cuando la página esté lista
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', startMainCarousel);
+        } else {
+            startMainCarousel();
+        }
 
-        // No footer carousel needed anymore
+        // Pausar animaciones cuando la pestaña no está visible
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearInterval(mainCarouselInterval);
+            } else if (!isMainPaused) {
+                startMainCarousel();
+            }
+        });
     </script>
 </body>
 </html>
